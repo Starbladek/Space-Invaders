@@ -12,6 +12,8 @@ class Ship(Sprite):
 
         # Load the ship image and get its rect
         self.image = pygame.image.load('images/ship.png')
+        self.exploded_image = pygame.image.load('images/ship_explode.png')
+        self.current_image = self.image
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
@@ -39,7 +41,7 @@ class Ship(Sprite):
 
     def blitme(self):
         """Draw the ship at its current location"""
-        self.screen.blit(self.image, self.rect)
+        self.screen.blit(self.current_image, self.rect)
 
     def center_ship(self):
         """Center the ship on the screen"""
